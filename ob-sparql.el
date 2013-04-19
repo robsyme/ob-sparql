@@ -52,9 +52,9 @@ by `org-babel-execute-src-block'"
   (message "executing SPARQL query...")
   (let* ((processed-params (org-babel-process-params params))
          ;; variables assigned for use in the block
-         (url (or (cdr (assoc :query-url params))
+         (url (or (cdr (assoc :sparql-url params))
                   (sparql-get-base-url)))
-         (results-format (or (cdr (assoc :results-format params))
+         (results-format (or (cdr (assoc :sparql-format params))
                              (sparql-get-format)))
          (url-request-method "POST")
          (url-request-extra-headers
